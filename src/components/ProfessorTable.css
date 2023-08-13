@@ -1,0 +1,53 @@
+/* Estilo para a tabela de professores */
+.professor-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.professor-table thead {
+    background-color: #f7f7f7;
+}
+
+.professor-table th, .professor-table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+}
+
+.professor-table th {
+    font-weight: bold;
+}
+
+.professor-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.professor-table button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.professor-table button:last-child {
+    margin-right: 0;
+}
+
+.professor-table button:hover {
+    opacity: 0.8;
+}
+
+/* Estilo para o botão Editar */
+.professor-table .edit-button {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Estilo para o botão Deletar */
+.professor-table .delete-button {
+    background-color: #e74c3c;
+    color: white;
+}

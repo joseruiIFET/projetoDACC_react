@@ -1,0 +1,18 @@
+/* src/components/ProfessorItem.css */
+
+.professor-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.professor-details span {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.professor-actions button {
+    margin-left: 10px;
+}

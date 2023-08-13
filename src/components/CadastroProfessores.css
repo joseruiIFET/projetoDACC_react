@@ -1,0 +1,45 @@
+.cadastro-professores {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.title {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-btn {
+    display: block;
+    margin: 0 auto 20px auto;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-btn:hover {
+    background-color: #0056b3;
+}
+
+.close-btn {
+    background-color: #FF4136;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+}
+
+.close-btn:hover {
+    background-color: #E70F00;
+}
