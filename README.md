@@ -4,15 +4,16 @@ Bem-vindo ao projeto de Cadastro de Professores! Este projeto é uma aplicação
 
 ## Índice
 
-- [Pré-requisitos](#pré-requisitos)
-- [Configuração do Ambiente](#configuração-do-ambiente)
-- [Instalação](#instalação)
-- [Execução](#execução)
-- [Funcionalidades](#funcionalidades)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Suporte](#suporte)
-- [Contribuição](#contribuição)
-- [Licença](#licença)
+- [Cadastro de Professores: Projeto Front-end React](#cadastro-de-professores-projeto-front-end-react)
+  - [Índice](#índice)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Configuração do Ambiente](#configuração-do-ambiente)
+  - [Instalação](#instalação)
+  - [Execução](#execução)
+  - [Funcionalidades](#funcionalidades)
+  - [Estrutura do Projeto](#estrutura-do-projeto)
+  - [Disponibilizando na Rede Local](#disponibilizando-na-rede-local)
+  - [Licença](#licença)
 
 ## Pré-requisitos
 
@@ -79,18 +80,34 @@ O projeto segue uma estrutura modular:
 - `src/api/`: Funções para interagir com a API REST.
 - `src/models/`: Define os modelos de dados usados no projeto.
 
-## Suporte
+## Disponibilizando na Rede Local
 
-Se você encontrar problemas ou tiver dúvidas sobre o projeto, abra uma "issue" no GitHub ou entre em contato diretamente.
+Para acessar sua aplicação React a partir de dispositivos diferentes na mesma rede local, siga os seguintes passos:
 
-## Contribuição
+1. **Configuração do Endereço de Host**:
+   
+    - Abra o arquivo `package.json` localizado no diretório raiz do seu projeto.
+    - Localize o script de início, geralmente denominado `"start"`. O padrão é: `"start": "react-scripts start"`.
+    - Modifique-o para: `"start": "HOST=0.0.0.0 react-scripts start"`. Esta configuração permite que o servidor de desenvolvimento ouça todas as solicitações de IP, tornando-o acessível na rede local.
 
-Contribuições são sempre bem-vindas! Se você quiser contribuir, faça um "fork" do repositório, crie uma "branch" para sua funcionalidade ou correção e envie um "pull request".
+2. **Identificar o Endereço IP Local**:
+
+    - Você precisa descobrir o endereço IP do computador onde o servidor React está em execução. Em sistemas baseados em UNIX (como Linux e macOS), você pode fazer isso com o comando `ifconfig`. Em sistemas Windows, use o comando `ipconfig`.
+
+3. **Acessando a Aplicação**:
+
+    - Após iniciar sua aplicação com `npm start` ou `yarn start`, em vez de usar `localhost:3000` em seu navegador, use `http://SEU_ENDEREÇO_IP:3000`.
+
+4. **Nota Importante**: 
+
+    - Ao
+
+ fazer essa alteração, sua aplicação React ainda tentará acessar a API no endereço `localhost:8080` (ou o endereço definido em seu código). Se sua API também precisa ser acessível a partir de outros dispositivos na rede, certifique-se de configurá-la adequadamente e de atualizar o endereço no código da aplicação React.
+
+5. **Precauções de Segurança**: 
+
+    - Ao definir o HOST como `0.0.0.0`, você pode tornar sua máquina vulnerável na rede. Sempre garanta que você está fazendo isso em um ambiente seguro e confiável, e lembre-se de reverter essa configuração antes de fazer deploy em ambientes de produção.
 
 ## Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
----
-
-Esperamos que você aproveite este projeto e que ele sirva como um excelente ponto de partida para sua jornada no desenvolvimento front-end com React!

@@ -3,6 +3,7 @@
 import axios from 'axios';
 
 const API_URL = 'http://localhost:8080'; // Ajuste para a URL da sua API
+//const API_URL = 'http://192.168.0.112:8080'; // Ajuste para a URL da sua API ficar disponível na rede local
 
 export const getProfessores = async () => {
   try {
