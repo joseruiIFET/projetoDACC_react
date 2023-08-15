@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import ProfessorItem from './ProfessorItem';
-import ProfessorForm from './ProfessorForm';
-import { getProfessores, createProfessor, updateProfessor, deleteProfessor } from '../api/professoresAPI';
-import Professor from '../models/Professor';
+import ProfessorForm from '../ProfessorForm';
+import { getProfessores, createProfessor, updateProfessor, deleteProfessor } from '../../api/professoresAPI';
+import Professor from '../../models/Professor';
 
 const ProfessoresList = () => {
     const [professores, setProfessores] = useState([]);

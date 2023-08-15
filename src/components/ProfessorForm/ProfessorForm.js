@@ -1,7 +1,8 @@
 // src/components/ProfessorForm.js
 import './ProfessorForm.css'
 import React, { useState } from 'react';
-import Professor from '../models/Professor';
+import Professor from '../../models/Professor';
+
 
 const ProfessorForm = ({ onSubmit, professor }) => {
     const [profData, setProfData] = useState(professor || new Professor());

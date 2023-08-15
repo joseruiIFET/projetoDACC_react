@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
-import ProfessorTable from "./ProfessorTable";
-import ProfessorForm from "./ProfessorForm";
+import ProfessorTable from "../ProfessorTable";
+import ProfessorForm from "../ProfessorForm";
 import {
   getProfessores,
   createProfessor,
   updateProfessor,
   deleteProfessor,
-} from "../api/professoresAPI";
+} from "../../api/professoresAPI";
 import "./CadastroProfessores.css";
 
 Modal.setAppElement("#root");
