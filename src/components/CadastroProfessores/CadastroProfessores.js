@@ -6,8 +6,10 @@ import {
   getProfessores,
   createProfessor,
   updateProfessor,
-  deleteProfessor,
-} from "../../api/professoresAPI";
+  deleteProfessor
+} from "../../api/apiFirebase";
+//from "../../api/apiSpringBoot";
+
 import "./CadastroProfessores.css";
 
 Modal.setAppElement("#root");
@@ -30,10 +32,7 @@ const CadastroProfessores = () => {
   const handleAddOrUpdate = async (professor) => {
     try {
       if (editingProfessor) {
-        const updatedProfessor = await updateProfessor(
-          editingProfessor.cpf,
-          professor
-        );
+        const updatedProfessor = await updateProfessor(editingProfessor.cpf,professor);
         setProfessores(
           professores.map((p) =>
             p.cpf === editingProfessor.cpf ? updatedProfessor : p

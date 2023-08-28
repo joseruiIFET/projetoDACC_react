@@ -21,7 +21,7 @@ const ProfessorTable = ({ professores, onEdit, onDelete }) => {
             </thead>
             <tbody>
                 {professores.map(professor => (
-                    <tr key={professor.cpf}>
+                    <tr key={professor.id}>
                         <td>{professor.nome}</td>
                         <td>{professor.sexo}</td>
                         <td>{professor.idade}</td>

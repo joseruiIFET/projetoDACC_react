@@ -7,9 +7,7 @@ import CadastroProfessores from './components/CadastroProfessores';
 function App() {
     return (
         <div className="App">
-            {/*<ProfessoresList/>*/
             <CadastroProfessores/>
-            }
         </div>
     );
 }
