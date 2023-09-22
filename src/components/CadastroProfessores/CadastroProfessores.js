@@ -7,8 +7,8 @@ import {
   createProfessor,
   updateProfessor,
   deleteProfessor
-} from "../../api/apiFirebase";
-//from "../../api/apiSpringBoot";
+//} from "../../api/apiFirebase";
+}from "../../api/apiSpringBoot";
 
 import "./CadastroProfessores.css";
 

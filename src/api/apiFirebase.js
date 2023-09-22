@@ -5,9 +5,6 @@ import {
   where,
   getDocs,
   addDoc,
-  updateDoc,
-  deleteDoc,
-  doc,
   writeBatch,
 } from "firebase/firestore";
 
@@ -34,7 +31,8 @@ export const getProfessores = async () => {
   
   export const updateProfessor = async (cpf, professor) => {
     try {
-      const q = query(collection(db, "professores"), where("cpf", "==", cpf));
+      const q = query(collection(db, "professores"), 
+      where("cpf", "==", cpf));
       const querySnapshot = await getDocs(q);
       const batch = writeBatch(db);
       querySnapshot.forEach((doc) => {
