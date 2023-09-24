@@ -1,4 +1,6 @@
-import { db } from "../firebaseConfig";
+
+import { db, storage } from "../firebaseConfig";
+
 import {
   collection,
   query,
@@ -62,4 +64,24 @@ export const getProfessores = async () => {
       console.error("Erro ao deletar documentos", error);
       return false;
     }
+
   };
+
+  export const handleImageUpload = async (imageFile) => {
+    try {
+      console.log("Iniciando upload da imagem...");
+      const storageRef = storage.ref();
+      console.log("Referência ao Storage obtida...");
+      const imageRef = storageRef.child(`fotoProfessores/${imageFile.name}`);
+      console.log("Referência à imagem criada...");
+      const snapshot = await imageRef.put(imageFile);
+      console.log("Imagem carregada com sucesso...");
+      const imageUrl = await snapshot.ref.getDownloadURL();
+      console.log("URL de download obtida:", imageUrl);
+      return imageUrl;
+    } catch (error) {
+      console.error("Erro ao fazer upload da imagem:", error);
+      return null;
+    }
+  };
+  
