@@ -1,12 +1,14 @@
 // src/components/ProfessorForm.js
 import "./ProfessorForm.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Professor from "../../models/Professor";
 import { handleImageUpload } from '../../api/apiFirebase';
 
 const ProfessorForm = ({ onSubmit, professor }) => {
   const [profData, setProfData] = useState(professor || new Professor());
   const [imageFile, setImageFile] = useState(null);
+  const [imageUploaded, setImageUploaded] = useState(false);
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -18,20 +20,26 @@ const ProfessorForm = ({ onSubmit, professor }) => {
 
     if (imageFile) {
       const imageUrl = await handleImageUpload(imageFile);
-
+      
       if (imageUrl) {
         // Se o upload da imagem for bem-sucedido, atualize a URL da imagem no estado do professor
         setProfData({ ...profData, imageUrl });
-        // Continue com a submissão dos dados do professor
-        onSubmit(profData);
-        // Limpe o arquivo de imagem selecionado
-        setImageFile(null);
+        setImageUploaded(true); // Aqui
       }
     } else {
       // Se nenhum arquivo de imagem foi selecionado, continue apenas com a submissão dos dados do professor
       onSubmit(profData);
     }
   };
+
+
+useEffect(() => {
+  if (profData.imageUrl && imageUploaded) {
+      onSubmit(profData);
+      setImageUploaded(false); // Reset the flag
+  }
+}, [profData.imageUrl]);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
